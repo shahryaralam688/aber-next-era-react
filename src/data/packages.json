@@ -1,0 +1,6 @@
+[
+  {"id":"pkg-umrah","title":"Umrah Comfort Plan","duration":"7 Days","price":"From SAR 3,950","badge":"Most Requested","image":"/assets/images/img_339_madinah-banner-promotion.jpg","highlights":["Visa documentation help","Makkah + Madinah stays","Dedicated advisor"],"cta":"Request Umrah Plan"},
+  {"id":"pkg-redsea","title":"Red Sea Luxury Escape","duration":"5 Days","price":"From SAR 4,800","badge":"Premium","image":"/assets/images/img_344_the-red-sea-luxury.jpg","highlights":["Beachfront resort","Private airport transfer","Water activity add-ons"],"cta":"Reserve This Escape"},
+  {"id":"pkg-city","title":"Riyadh + Jeddah Twin City","duration":"6 Days","price":"From SAR 3,300","badge":"Best Value","image":"/assets/images/img_359_saudi-getaway-from-jeddah-riyadh.jpg","highlights":["City tours","4-star hotel options","Family-friendly pacing"],"cta":"Get Full Itinerary"},
+  {"id":"pkg-adventure","title":"Aseer & Taif Adventure","duration":"4 Days","price":"From SAR 2,750","badge":"Adventure","image":"/assets/images/img_347_Taif-banner-new.jpg","highlights":["Mountain viewpoints","Local experiences","Guided transport"],"cta":"Plan Adventure"}
+]

@@ -1,0 +1,8 @@
+[
+  {"id":"riyadh","name":"Riyadh","tag":"City Pulse","description":"Skyline dining, cultural districts, and premium shopping with curated private transfers.","image":"/assets/images/img_345_riyadh-banner-new.jpg"},
+  {"id":"jeddah","name":"Jeddah","tag":"Coastal Culture","description":"Red Sea waterfront, old town stories, and modern lifestyle escapes.","image":"/assets/images/img_336_jeddah-banner.jpg"},
+  {"id":"alula","name":"AlUla","tag":"Desert Wonder","description":"Epic canyon landscapes, stargazing camps, and luxury retreat experiences.","image":"/assets/images/img_331_alula-banner-new.jpg"},
+  {"id":"makkah","name":"Makkah","tag":"Spiritual Journey","description":"Trusted support for religious travel planning with respectful guidance.","image":"/assets/images/img_340_New-makkah-view-homepage.jpg"},
+  {"id":"madinah","name":"Madinah","tag":"Faith & Calm","description":"Comfort-first itineraries, smooth transfers, and family-focused stays.","image":"/assets/images/img_339_madinah-banner-promotion.jpg"},
+  {"id":"tabuk","name":"Tabuk","tag":"Mountain Routes","description":"Cooler weather, scenic drives, and adventure-led weekend itineraries.","image":"/assets/images/img_346_New-Tabuk_Image-Banner.jpg"}
+]
