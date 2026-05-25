@@ -1,6 +1,6 @@
-export function Hero() {
+﻿export function Hero({ copy }) {
   return (
-    <section className="hero" aria-label="Aber Travel premium hero">
+    <section className="hero" aria-label={copy.ariaLabel}>
       <video
         className="hero-video"
         autoPlay
@@ -15,32 +15,30 @@ export function Hero() {
       <div className="hero-overlay" aria-hidden="true" />
       <div className="hero-vignette" aria-hidden="true" />
 
-      <button className="hero-pause" type="button" aria-label="Pause background video">
+      <button className="hero-pause" type="button" aria-label={copy.pauseAria}>
         II
       </button>
-      <button className="hero-feedback" type="button" aria-label="Open feedback">
-        Feedback
+      <button className="hero-feedback" type="button" aria-label={copy.feedbackAria}>
+        {copy.feedback}
       </button>
 
       <div className="hero-content">
-        <p className="eyebrow">Aber Travel &amp; Tourism Agency</p>
-        <h1>Summer Our Way</h1>
-        <p className="hero-lead">
-          Discover summer offers and premium Gulf experiences your way, from the Red Sea to Aseer and beyond.
-        </p>
+        <p className="eyebrow">{copy.eyebrow}</p>
+        <h1>{copy.title}</h1>
+        <p className="hero-lead">{copy.lead}</p>
 
         <div className="hero-actions">
-          <button className="btn btn-solid">Book Now</button>
+          <button type="button" className="btn btn-solid">{copy.bookNow}</button>
         </div>
       </div>
 
-      <div className="hero-campaign-tabs" aria-label="Featured campaigns">
+      <div className="hero-campaign-tabs" aria-label={copy.campaignsLabel}>
         <div className="hero-tabs-progress" aria-hidden="true">
           <span />
         </div>
-        <button className="hero-tab active" type="button">Summer Our Way</button>
-        <button className="hero-tab" type="button">Water Fun Awaits!</button>
-        <button className="hero-tab" type="button">Join Aber Rewards</button>
+        {copy.campaigns.map((campaign, index) => (
+          <button key={campaign} className={index === 0 ? 'hero-tab active' : 'hero-tab'} type="button">{campaign}</button>
+        ))}
       </div>
       <div className="hero-bottom-fade" aria-hidden="true" />
       <div className="hero-noise" aria-hidden="true" />

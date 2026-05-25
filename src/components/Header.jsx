@@ -1,37 +1,66 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 
-const menuBlocks = {
-  Destinations: ['Riyadh', 'Jeddah', 'AlUla', 'Makkah', 'Madinah', 'Tabuk'],
-  Packages: ['Family Deals', 'Luxury Escapes', 'Corporate Trips', 'Weekend Plans'],
-  'Umrah & Religious Tours': ['Umrah Essentials', 'Group Support', 'Scholars Access', 'Transport Help'],
-  Experiences: ['Desert', 'Heritage', 'Beach', 'Adventure'],
-  About: ['Our Story', 'Service Promise', 'Travel Advisors', 'Partners'],
-  Contact: ['Call Us', 'WhatsApp', 'Email', 'Visit Office']
-}
+const LANGUAGE_OPTIONS = [
+  { code: 'en', label: 'EN' },
+  { code: 'ar', label: 'AR' }
+]
 
-export function Header() {
+export function Header({ copy, language, onLanguageChange }) {
   const [open, setOpen] = useState(false)
+  const firstMenuId = copy.navItems[0]?.id || false
+  const activeMenu = copy.navItems.find((item) => item.id === open)
 
   return (
     <header className="header" id="top">
-      <a href="#top" className="logo" aria-label="Aber Travel home">
-        <span className="logo-dot" /> Aber Travel & Tourism Agency
+      <a href="#top" className="logo" aria-label={copy.logoAria}>
+        <span className="logo-dot" /> {copy.logoText}
       </a>
-      <nav className="nav" aria-label="Primary">
-        {Object.keys(menuBlocks).map((item) => (
-          <button key={item} className="nav-link" onMouseEnter={() => setOpen(item)} onFocus={() => setOpen(item)}>
-            {item}
+
+      <nav className="nav" aria-label={copy.primaryNavAria}>
+        {copy.navItems.map((item) => (
+          <button
+            key={item.id}
+            type="button"
+            className="nav-link"
+            onMouseEnter={() => setOpen(item.id)}
+            onFocus={() => setOpen(item.id)}
+          >
+            {item.label}
           </button>
         ))}
       </nav>
-      <button className="btn btn-solid">Plan My Trip</button>
-      <button className="menu-toggle" aria-label="Toggle menu" onClick={() => setOpen(open ? false : 'Destinations')}>Menu</button>
 
-      {open && (
+      <div className="header-actions">
+        <div className="lang-switch" role="group" aria-label={copy.languageSwitcherLabel}>
+          {LANGUAGE_OPTIONS.map((option) => (
+            <button
+              key={option.code}
+              type="button"
+              className={language === option.code ? 'lang-btn active' : 'lang-btn'}
+              aria-pressed={language === option.code}
+              onClick={() => onLanguageChange(option.code)}
+            >
+              {option.label}
+            </button>
+          ))}
+        </div>
+        <button type="button" className="btn btn-solid">{copy.planButton}</button>
+      </div>
+
+      <button
+        type="button"
+        className="menu-toggle"
+        aria-label={copy.menuToggleAria}
+        onClick={() => setOpen(open ? false : firstMenuId)}
+      >
+        {copy.menuToggleText}
+      </button>
+
+      {activeMenu && (
         <div className="mega" onMouseLeave={() => setOpen(false)}>
-          <p className="mega-title">{open}</p>
+          <p className="mega-title">{activeMenu.label}</p>
           <div className="mega-grid">
-            {menuBlocks[open].map((item) => (
+            {activeMenu.links.map((item) => (
               <a key={item} href="#" className="mega-item">{item}</a>
             ))}
           </div>
